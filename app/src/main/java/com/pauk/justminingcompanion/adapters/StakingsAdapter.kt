@@ -18,6 +18,7 @@ class StakingsAdapter(stakings: List<Staking>) : RecyclerView.Adapter<StakingsAd
     private var mParent: ViewGroup? = null
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var label: TextView = itemView.findViewById(R.id.stakingLabelTextView)
         var name: TextView = itemView.findViewById(R.id.stakingNameTextView)
         var collateral: TextView = itemView.findViewById(R.id.stakingCollateralTextView)
         var image: ImageView = itemView.findViewById(R.id.stakingImageView)
@@ -44,22 +45,23 @@ class StakingsAdapter(stakings: List<Staking>) : RecyclerView.Adapter<StakingsAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val m = mStakings[position]
+        val s = mStakings[position]
 
         // Render currency icon
-        Picasso.get().load("https://icons.bitbot.tools/api/${m.currencyCode}/128x128")
+        Picasso.get().load("https://icons.bitbot.tools/api/${s.currencyCode}/128x128")
                 .resize(64, 64)
                 .centerCrop()
                 .into(holder.image)
 
         // Collateral value and name
-        holder.name.text = m.currencyCode
-        holder.collateral.text = m.amount.toString()
+        holder.label.text = s.currencyCode
+        holder.name.text = s.currencyCode
+        holder.collateral.text = s.amount.toString()
 
         // Launch and end dates
         val format: SimpleDateFormat = SimpleDateFormat("dd MMMM yyyy")
-        if(m.startDate != null) {
-            holder.launchDate.text = format.format(m.startDate * 1000)
+        if(s.startDate != null) {
+            holder.launchDate.text = format.format(s.startDate * 1000)
         }
         else {
             holder.launchDate.visibility = View.GONE
@@ -67,21 +69,21 @@ class StakingsAdapter(stakings: List<Staking>) : RecyclerView.Adapter<StakingsAd
         }
 
         // Reward value and name, ROI and total mined
-        if(m.startDate != null) {
-            val delta = (m.requestTime - m.startDate * 1000) / 60 / 60 / 24 / 1000
-            val rewardPerDay = (m.reward / delta)
+        if(s.startDate != null) {
+            val delta = (s.requestTime - s.startDate * 1000) / 60 / 60 / 24 / 1000
+            val rewardPerDay = (s.reward / delta)
             val rewardPerMinuteBigDecimal = rewardPerDay.toBigDecimal().setScale(8, RoundingMode.UP)
 
             holder.reward.text = "~$rewardPerMinuteBigDecimal"
-            holder.rewardUnit.text = "${m.currencyCode} / jour"
+            holder.rewardUnit.text = "${s.currencyCode} / jour"
 
-            val roi = rewardPerDay * 365 / m.amount * 100
+            val roi = rewardPerDay * 365 / s.amount * 100
             val roiBigDecimal = roi.toBigDecimal().setScale(1, RoundingMode.UP)
             holder.roi.text = "~$roiBigDecimal%"
 
-            val rewardBigDecimal = m.reward.toBigDecimal().setScale(8, RoundingMode.UP)
+            val rewardBigDecimal = s.reward.toBigDecimal().setScale(8, RoundingMode.UP)
             holder.totalMined.text = rewardBigDecimal.toString()
-            holder.totalMinedUnit.text = m.currencyCode
+            holder.totalMinedUnit.text = s.currencyCode
         }
         else {
             holder.reward.visibility = View.GONE

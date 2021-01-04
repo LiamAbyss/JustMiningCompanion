@@ -13,18 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/launchDate"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/stakingImageView"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <ImageView
-        android:id="@+id/stakingImageView"
-        android:layout_width="@dimen/imageViewSize"
-        android:layout_height="@dimen/imageViewSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_popup_sync" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,16 +24,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/quantity"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/stakingCollateralTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
@@ -51,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="name"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stakingCollateralTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingCollateralTextView" />
@@ -59,8 +55,9 @@
         android:id="@+id/stakingLaunchDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="DD MMMM YYYY"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingLaunchDateLabelTextView" />
@@ -71,16 +68,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/currentReward"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toBottomOf="@+id/stakingLaunchDateLabelTextView" />
 
     <TextView
         android:id="@+id/stakingCurrentRewardTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="XXX.XXXXXXXX"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
@@ -90,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="MONEY / jour"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stakingCurrentRewardTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingCurrentRewardTextView" />
@@ -100,16 +101,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/estimatedRoi"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/stakingEstimatedRoiTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="~XX.X%"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/stakingEstimatedRoiLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingEstimatedRoiLabelTextView" />
 
@@ -120,17 +124,20 @@
         android:layout_marginTop="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
         android:text="@string/totalMined"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/stakingEstimatedRoiLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/stakingEstimatedRoiLabelTextView"
         app:layout_constraintTop_toBottomOf="@+id/stakingEstimatedRoiLabelTextView" />
 
     <TextView
         android:id="@+id/stakingTotalMinedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="XXX.XXXXXXXX"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/stakingTotalMinedLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingTotalMinedLabelTextView" />
 
@@ -140,8 +147,40 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="MONEY"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stakingTotalMinedTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingTotalMinedTextView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/stakingLabelTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/stakingImageView"
+            android:layout_width="@dimen/imageViewSize"
+            android:layout_height="@dimen/imageViewSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stakingLabelTextView"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,18 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/launchDate"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/stakingImageView"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <ImageView
-        android:id="@+id/stakingImageView"
-        android:layout_width="@dimen/imageViewSize"
-        android:layout_height="@dimen/imageViewSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_popup_sync" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,16 +24,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/collateral"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/masternodeCollateralTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
@@ -51,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="name"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/masternodeCollateralTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeCollateralTextView" />
@@ -59,8 +55,9 @@
         android:id="@+id/masternodeLaunchDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="DD MMMM YYYY"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/stakingLaunchDateLabelTextView" />
@@ -71,16 +68,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/currentReward"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/masternodeEndDateLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/masternodeEndDateLabelTextView"
         app:layout_constraintTop_toBottomOf="@+id/masternodeEndDateLabelTextView" />
 
     <TextView
         android:id="@+id/masternodeCurrentRewardTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="XXX.XXXXXXXX"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
@@ -90,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="MONEY / min"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/masternodeCurrentRewardTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeCurrentRewardTextView" />
@@ -100,16 +101,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/estimatedRoi"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/masternodeEstimatedRoiTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="~XX.X%"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/masternodeEstimatedRoiLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeEstimatedRoiLabelTextView" />
 
@@ -129,8 +133,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin"
         android:text="@string/endDate"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/stakingLaunchDateLabelTextView"
         app:layout_constraintTop_toBottomOf="@+id/stakingLaunchDateLabelTextView"
         tools:visibility="visible" />
 
@@ -138,8 +144,9 @@
         android:id="@+id/masternodeEndDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="DD MMMM YYYY"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/masternodeEndDateLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeEndDateLabelTextView"
@@ -152,17 +159,20 @@
         android:layout_marginTop="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
         android:text="@string/totalMined"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/masternodeEstimatedRoiLabelTextView"
+        app:layout_constraintStart_toStartOf="@+id/masternodeEstimatedRoiLabelTextView"
         app:layout_constraintTop_toBottomOf="@+id/masternodeEstimatedRoiLabelTextView" />
 
     <TextView
         android:id="@+id/masternodeTotalMinedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginStart="@dimen/small_text_margin"
         android:text="XXX.XXXXXXXX"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/masternodeTotalMinedLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeTotalMinedLabelTextView" />
 
@@ -172,8 +182,41 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_text_margin"
         android:text="MONEY"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/masternodeTotalMinedTextView"
         app:layout_constraintTop_toTopOf="@+id/masternodeTotalMinedTextView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/masternodeLabelTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/masternodeImageView"
+            android:layout_width="@dimen/imageViewSize"
+            android:layout_height="@dimen/imageViewSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/masternodeLabelTextView"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,9 +18,10 @@ class MasternodesAdapter(masternodes: List<Masternode>) : RecyclerView.Adapter<M
     private var mParent: ViewGroup? = null
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var label: TextView = itemView.findViewById(R.id.masternodeLabelTextView)
         var name: TextView = itemView.findViewById(R.id.masternodeNameTextView)
         var collateral: TextView = itemView.findViewById(R.id.masternodeCollateralTextView)
-        var image: ImageView = itemView.findViewById(R.id.stakingImageView)
+        var image: ImageView = itemView.findViewById(R.id.masternodeImageView)
         var launchDate: TextView = itemView.findViewById(R.id.masternodeLaunchDateTextView)
         var launchDateLabel: TextView = itemView.findViewById(R.id.stakingLaunchDateLabelTextView)
         var endDate: TextView = itemView.findViewById(R.id.masternodeEndDateTextView)
@@ -64,6 +65,7 @@ class MasternodesAdapter(masternodes: List<Masternode>) : RecyclerView.Adapter<M
                 .into(holder.image)
 
         // Collateral value and name
+        holder.label.text = m.currencyCode
         holder.name.text = m.currencyCode
         holder.collateral.text = m.collateral.toString()
 

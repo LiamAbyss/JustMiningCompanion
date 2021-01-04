@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pauk.justminingcompanion.R
 import com.pauk.justminingcompanion.models.wallets.Wallet
 import com.squareup.picasso.Picasso
+import java.math.RoundingMode
 
 class WalletsAdapter(wallets: List<Wallet>) : RecyclerView.Adapter<WalletsAdapter.ViewHolder>() {
 
@@ -43,8 +44,9 @@ class WalletsAdapter(wallets: List<Wallet>) : RecyclerView.Adapter<WalletsAdapte
                 .into(holder.image)
 
         // Collateral value and name
+        val balance = w.balance.toBigDecimal().setScale(8, RoundingMode.UP)
         holder.name.text = w.currencyCode
-        holder.collateral.text = w.balance.toString()
+        holder.collateral.text = balance.toString()
         holder.label.text = w.currencyCode
     }
 }
