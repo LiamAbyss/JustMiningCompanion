@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.pauk.justminingcompanion.R
 import com.pauk.justminingcompanion.api.JustMiningService
@@ -20,10 +21,13 @@ class MainActivity : AppCompatActivity() {
 
     private val executor = Executors.newSingleThreadExecutor()
     private lateinit var service: JustMiningService
+    private lateinit var currentTab: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        currentTab = findViewById(R.id.currentTabTextView)
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://api.just-mining.com/v1/")
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                         supportFragmentManager.beginTransaction()
                                 .replace(R.id.fragmentFrameLayout, MasternodeListFragment(masternodes.data.orEmpty()))
                                 .commit()
+                        currentTab.text = getString(R.string.masternodes)
                     }
                 }
             }
@@ -61,9 +66,12 @@ class MainActivity : AppCompatActivity() {
             if(res.isSuccessful){
                 val stakings = res.body()
                 if(stakings != null) {
-                    supportFragmentManager.beginTransaction()
+                    runOnUiThread {
+                        supportFragmentManager.beginTransaction()
                             .replace(R.id.fragmentFrameLayout, StakingListFragment(stakings.data.orEmpty()))
                             .commit()
+                        currentTab.text = getString(R.string.stakings)
+                    }
                 }
             }
         }
@@ -77,9 +85,12 @@ class MainActivity : AppCompatActivity() {
             if(res.isSuccessful){
                 val wallets = res.body()
                 if(wallets != null) {
-                    supportFragmentManager.beginTransaction()
+                    runOnUiThread {
+                        supportFragmentManager.beginTransaction()
                             .replace(R.id.fragmentFrameLayout, WalletListFragment(wallets.data.orEmpty()))
                             .commit()
+                        currentTab.text = getString(R.string.wallet)
+                    }
                 }
             }
         }
