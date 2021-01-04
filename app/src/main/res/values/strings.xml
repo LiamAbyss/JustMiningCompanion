@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">JustMiningCompanion</string>
+    <string name="collateral">Collatéral :</string>
+    <string name="launchDate">Date de lancement :</string>
+    <string name="currentReward">Reward actuel :</string>
+    <string name="estimatedRoi">ROI estimé :</string>
+    <string name="endDate">Date d\'arrêt :</string>
+    <string name="totalMined">Total miné :</string>
+    <string name="file">Fichier</string>
+    <string name="create_new">Nouveau</string>
+    <string name="open">Ouvrir</string>
+    <string name="masternodes">Masternodes</string>
+    <string name="stakings">Stakings</string>
+    <string name="wallet">Portefeuille</string>
+    <string name="apiKey">Clé d\'API</string>
+    <string name="apiKeyNotWorking">Clé API non fonctionnelle</string>
+    <string name="apiKeyLengthError">La clé API ne contient pas 64 caractères</string>
+    <string name="logOut">Se déconnecter</string>
+    <string name="quantity">Quantité :</string>
+</resources>

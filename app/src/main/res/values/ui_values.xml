@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_sides_frame">32dp</dimen>
+    <dimen name="padding_frame">32dp</dimen>
+    <dimen name="imageViewSize">64dp</dimen>
+    <dimen name="login_margin_sides">30dp</dimen>
+</resources>

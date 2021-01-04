@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/small_text_margin"
+    android:background="@drawable/layout_border">
+
+    <TextView
+        android:id="@+id/stakingLaunchDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/launchDate"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/stakingImageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/stakingImageView"
+        android:layout_width="@dimen/imageViewSize"
+        android:layout_height="@dimen/imageViewSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_popup_sync" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/collateral"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/masternodeCollateralTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/masternodeNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_text_margin"
+        android:text="name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/masternodeCollateralTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeCollateralTextView" />
+
+    <TextView
+        android:id="@+id/masternodeLaunchDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="DD MMMM YYYY"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/stakingLaunchDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/currentReward"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/masternodeEndDateLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/masternodeEndDateLabelTextView" />
+
+    <TextView
+        android:id="@+id/masternodeCurrentRewardTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="XXX.XXXXXXXX"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/masternodeRewardUnitTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_text_margin"
+        android:text="MONEY / min"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/masternodeCurrentRewardTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeCurrentRewardTextView" />
+
+    <TextView
+        android:id="@+id/masternodeEstimatedRoiLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/estimatedRoi"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/masternodeEstimatedRoiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="~XX.X%"
+        app:layout_constraintStart_toEndOf="@+id/masternodeEstimatedRoiLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeEstimatedRoiLabelTextView" />
+
+    <TextView
+        android:id="@+id/masternodeIsActiveTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/small_text_margin"
+        android:text="@android:string/unknownName"
+        android:textColor="@color/text_valid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/masternodeEndDateLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/endDate"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/stakingLaunchDateLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/stakingLaunchDateLabelTextView"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/masternodeEndDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="DD MMMM YYYY"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/masternodeEndDateLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeEndDateLabelTextView"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/masternodeTotalMinedLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:text="@string/totalMined"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/masternodeEstimatedRoiLabelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/masternodeEstimatedRoiLabelTextView" />
+
+    <TextView
+        android:id="@+id/masternodeTotalMinedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin"
+        android:text="XXX.XXXXXXXX"
+        app:layout_constraintStart_toEndOf="@+id/masternodeTotalMinedLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeTotalMinedLabelTextView" />
+
+    <TextView
+        android:id="@+id/masternodeTotalMinedUnitTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_text_margin"
+        android:text="MONEY"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/masternodeTotalMinedTextView"
+        app:layout_constraintTop_toTopOf="@+id/masternodeTotalMinedTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
