@@ -1,5 +1,6 @@
 package com.pauk.justminingcompanion.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -12,8 +13,11 @@ import com.pauk.justminingcompanion.ui.fragments.MasternodeListFragment
 import com.pauk.justminingcompanion.ui.fragments.StakingListFragment
 import com.pauk.justminingcompanion.ui.fragments.WalletListFragment
 import com.pauk.justminingcompanion.utils.PreferenceUtils
+import org.eazegraph.lib.charts.PieChart
+import org.eazegraph.lib.models.PieModel
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.*
 import java.util.concurrent.Executors
 
 
@@ -22,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private val executor = Executors.newSingleThreadExecutor()
     private lateinit var service: JustMiningService
     private lateinit var currentTab: TextView
+    private var random: Random = Random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,23 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         service = retrofit.create(JustMiningService::class.java)
+
+        /*val pieChart = findViewById<PieChart>(R.id.piechart)
+
+        pieChart.addPieSlice(
+            PieModel(
+                "POLIS",
+                82.6f,
+                Color.parseColor(generateColor())
+            ))
+        pieChart.addPieSlice(
+            PieModel(
+                "MATIC",
+                17.4f,
+                Color.parseColor(generateColor())
+            )
+        )
+        pieChart.startAnimation()*/
 
         showWallets()
     }
@@ -124,6 +146,11 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun generateColor(): String? {
+        val newColor: Int = random.nextInt(0x1000000)
+        return String.format("#%06X", newColor)
     }
 
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pauk.justminingcompanion.R
 import com.pauk.justminingcompanion.models.stakings.Staking
 import com.squareup.picasso.Picasso
+import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.SimpleDateFormat
 
@@ -72,15 +73,23 @@ class StakingsAdapter(stakings: List<Staking>) : RecyclerView.Adapter<StakingsAd
         if(s.startDate != null) {
             val delta = (s.requestTime - s.startDate * 1000) / 60 / 60 / 24 / 1000
             val rewardPerDay = (s.reward / delta)
-            val rewardPerMinuteBigDecimal = rewardPerDay.toBigDecimal().setScale(8, RoundingMode.UP)
+            var rewardPerMinuteBigDecimal : BigDecimal
+            if(rewardPerDay == Double.POSITIVE_INFINITY) {
+                holder.reward.text = "Loading..."
 
-            holder.reward.text = "~$rewardPerMinuteBigDecimal"
-            holder.rewardUnit.text = "${s.currencyCode} / jour"
+                holder.roi.text = "Loading..."
+                holder.rewardUnit.text = ""
+            }
+            else {
+                rewardPerMinuteBigDecimal = rewardPerDay.toBigDecimal().setScale(8, RoundingMode.UP)
+                holder.reward.text = "~$rewardPerMinuteBigDecimal"
 
-            val roi = rewardPerDay * 365 / s.amount * 100
-            val roiBigDecimal = roi.toBigDecimal().setScale(1, RoundingMode.UP)
-            holder.roi.text = "~$roiBigDecimal%"
+                holder.rewardUnit.text = "${s.currencyCode} / jour"
 
+                val roi = rewardPerDay * 365 / s.amount * 100
+                val roiBigDecimal = roi.toBigDecimal().setScale(1, RoundingMode.UP)
+                holder.roi.text = "~$roiBigDecimal%"
+            }
             val rewardBigDecimal = s.reward.toBigDecimal().setScale(8, RoundingMode.UP)
             holder.totalMined.text = rewardBigDecimal.toString()
             holder.totalMinedUnit.text = s.currencyCode

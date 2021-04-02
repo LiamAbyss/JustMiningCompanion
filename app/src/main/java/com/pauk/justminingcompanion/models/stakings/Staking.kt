@@ -15,7 +15,7 @@ class Staking {
     /**
      * Amount of the stake
      */
-    public final val amount:Int = 0
+    public final val amount:Double = 0.0
 
     /**
      * Rewards earned by the staking
@@ -25,7 +25,7 @@ class Staking {
     /**
      * Locked rewards earned by the staking
      */
-    public final val rewards:Double = 0.0
+    public final val lockedReward:Double = 0.0
 
     /**
      * Start date of the staking
